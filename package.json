@@ -1,0 +1,68 @@
+{
+  "name": "pilolli.dev",
+  "description": "Il sito di Antonio Pilolli.",
+  "version": "0.0.1",
+  "repository": "https://github.com/pilo7989/pilolli.it.git",
+  "author": "Antonio Pilolli",
+  "main": "next.config.js",
+  "scripts": {
+    "build": "next build",
+    "dev": "next",
+    "start": "next start",
+    "format": "yarn format:index && yarn format:pages && yarn format:src",
+    "format:index": "prettier --write \"*.{js,json,md}\"",
+    "format:pages": "prettier --write \"pages/**/*.js\"",
+    "format:src": "prettier --write \"src/**/*.{js,md,mdx}\""
+  },
+  "dependencies": {
+    "fast-glob": "^3.2.4",
+    "gray-matter": "^4.0.2",
+    "js-cookie": "^2.2.1",
+    "next": "^9.5.2",
+    "next-cookies": "^2.0.3",
+    "next-mdx-remote": "^0.6.0",
+    "next-seo": "^4.7.3",
+    "prism-react-renderer": "^1.1.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-icons": "^3.10.0"
+  },
+  "devDependencies": {
+    "emotion-theming": "^10.0.27",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "prettier": "^2.0.5",
+    "rebass": "^4.0.7",
+    "styled-components": "^5.1.1",
+    "styled-preflight": "^8.0.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,json,md}": [
+      "prettier --write"
+    ],
+    "pages/**/*.js": [
+      "prettier --write"
+    ],
+    "src/**/*.{js,md,mdx}": [
+      "prettier --write"
+    ]
+  },
+  "prettier": {
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "all"
+  },
+  "keywords": [
+    "nextjs",
+    "mdx",
+    "Antonio Pilolli",
+    "pilolli.dev",
+    "Frontend developer"
+  ],
+  "license": "MIT"
+}
