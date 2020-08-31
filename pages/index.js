@@ -1,27 +1,51 @@
-import { Flex, Text } from 'rebass';
-import Wrapper from '@components/Wrapper';
-import Logo from '@components/Logo';
+import fs from 'fs'
+import matter from 'gray-matter'
+import path from 'path'
+import { postFilePaths, POSTS_PATH } from '@utils/mdxUtils'
 
-export default function Index() {
+import SEO from '@components/SEO'
+import DefaultLayout from '@components/default-layout'
+import FullWidth from '@components/full-width'
+import Link from 'next/link'
+import { VStack, Box, Heading, Text } from '@chakra-ui/core'
+import BlogPost from '@components/blog-post'
+
+export function getStaticProps() {
+  const posts = postFilePaths.map((filePath) => {
+    const source = fs.readFileSync(path.join(POSTS_PATH, filePath))
+    const { content, data } = matter(source)
+
+    return {
+      content,
+      data,
+      filePath,
+    }
+  })
+
+  return { props: { posts } }
+}
+
+export default function Index({ posts }) {
   return (
-    <Wrapper>
-      <Flex
-        sx={{
-          position: 'relative',
-        }}
-        flexDirection="column"
-        alignItems="center"
-        justifyContent="center"
-        height="100vh"
-        bg="background"
-        color="text"
+    <DefaultLayout as="main">
+      <SEO
+        title="Homepage"
+        description="Il sito di Antonio Pilolli, front-end developer e web designer"
+      />
+      <FullWidth
+        p={8}
+        fontSize="3xl"
+        bg="linear-gradient(to top right, #9dff1c, #00c3ff)"
+        color="black"
+        mb={8}
       >
-        <Logo />
-        <Text fontSize={[5, 6, 7]} p={3}>
-          👋 Ciao,
-        </Text>
-        <Text fontSize={[4, 5, 6]}>ci vediamo presto!</Text>
-      </Flex>
-    </Wrapper>
-  );
+        Prova Componente full width
+      </FullWidth>
+      <VStack align="stretch" spacing={8}>
+        {posts.map((post) => (
+          <BlogPost key={`${post.filePath.replace(/\.mdx?$/, '')}`} {...post} />
+        ))}
+      </VStack>
+    </DefaultLayout>
+  )
 }

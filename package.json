@@ -15,26 +15,28 @@
     "format:src": "prettier --write \"src/**/*.{js,md,mdx}\""
   },
   "dependencies": {
-    "fast-glob": "^3.2.4",
+    "@chakra-ui/core": "^1.0.0-rc.3",
+    "@chakra-ui/theme": "^1.0.0-rc.3",
+    "@chakra-ui/theme-tools": "1.0.0-rc.3",
+    "@mdx-js/loader": "^1.6.16",
+    "@mdx-js/react": "^1.6.16",
     "gray-matter": "^4.0.2",
-    "js-cookie": "^2.2.1",
     "next": "^9.5.2",
-    "next-cookies": "^2.0.3",
-    "next-mdx-remote": "^0.6.0",
+    "next-google-fonts": "^1.2.1",
+    "next-mdx-remote": "^1.0.0",
+    "next-remote-watch": "^0.2.0",
     "next-seo": "^4.7.3",
     "prism-react-renderer": "^1.1.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-icons": "^3.10.0"
+    "react-icons": "^3.11.0",
+    "remark-autolink-headings": "^6.0.1",
+    "remark-slug": "^6.0.0"
   },
   "devDependencies": {
-    "emotion-theming": "^10.0.27",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.11",
-    "prettier": "^2.0.5",
-    "rebass": "^4.0.7",
-    "styled-components": "^5.1.1",
-    "styled-preflight": "^8.0.1"
+    "prettier": "^2.0.5"
   },
   "husky": {
     "hooks": {
@@ -53,7 +55,10 @@
     ]
   },
   "prettier": {
-    "semi": true,
+    "bracketSpacing": true,
+    "jsxBracketSameLine": false,
+    "jsxSingleQuote": false,
+    "semi": false,
     "singleQuote": true,
     "trailingComma": "all"
   },
@@ -62,7 +67,8 @@
     "mdx",
     "Antonio Pilolli",
     "pilolli.dev",
-    "Frontend developer"
+    "Frontend developer",
+    "UI/UX Designer"
   ],
   "license": "MIT"
 }

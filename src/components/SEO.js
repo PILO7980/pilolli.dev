@@ -1,24 +1,12 @@
-import { NextSeo } from 'next-seo';
+import { NextSeo } from 'next-seo'
+import siteConfig from '@configs/site-config'
 
-export default function SEO({
-  title,
-  description,
-  twitter,
-  favicon,
-  ogImage,
-  url,
-}) {
-  return (
-    <NextSeo
-      title={title}
-      description={description}
-      canonical={url}
-      twitter={{
-        handle: twitter.handle || '',
-        site: twitter.site || '',
-        cardType: 'summary_large_image',
-      }}
-      favicon={favicon || ''}
-    />
-  );
-}
+const SEO = ({ title, description }) => (
+  <NextSeo
+    title={title}
+    description={description}
+    titleTemplate={siteConfig.seo.titleTemplate}
+  />
+)
+
+export default SEO
