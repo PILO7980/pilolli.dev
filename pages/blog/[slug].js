@@ -3,13 +3,27 @@ import matter from 'gray-matter'
 import hydrate from 'next-mdx-remote/hydrate'
 import renderToString from 'next-mdx-remote/render-to-string'
 import path from 'path'
-import dynamic from 'next/dynamic'
 import { postFilePaths, POSTS_PATH } from '@utils/mdxUtils'
 
 import DefaultLayout from '@components/default-layout'
 import SEO from '@components/SEO'
-import { Heading, Text } from '@chakra-ui/core'
+import { chakra, useColorModeValue, Box } from '@chakra-ui/core'
 import components from '@components/mdx-components'
+
+const Title = (props) => (
+  <chakra.h1 color={useColorModeValue('green.500', 'green.300')} {...props} />
+)
+
+const Description = (props) => (
+  <chakra.p
+    fontSize={['md', 'lg', 'xl', '2xl']}
+    fontWeight="semibold"
+    fontStyle="italic"
+    color={useColorModeValue('gray.600', 'whiteAlpha.800')}
+    mb={6}
+    {...props}
+  />
+)
 
 const PostPage = ({ source, frontMatter }) => {
   const content = hydrate(source, { components })
@@ -17,13 +31,11 @@ const PostPage = ({ source, frontMatter }) => {
   return (
     <DefaultLayout>
       <SEO title={frontMatter.title} description={frontMatter.description} />
-      <Heading as="h1" mb={2}>
-        {frontMatter.title}
-      </Heading>
-      <Text fontWeight="semibold" fontSize={['sm', 'md', 'lg']} mb={1}>
-        {frontMatter.description}
-      </Text>
-      {content}
+      <Box gridColumn={['start / end', null, null, 'start / middle']}>
+        <Title textStyle={`h1`}>{frontMatter.title}</Title>
+        <Description>{frontMatter.description}</Description>
+        {content}
+      </Box>
     </DefaultLayout>
   )
 }
@@ -38,10 +50,7 @@ export const getStaticProps = async ({ params }) => {
     components,
     // Optionally pass remark/rehype plugins
     mdxOptions: {
-      remarkPlugins: [
-        require('remark-slug'),
-        require('remark-autolink-headings'),
-      ],
+      remarkPlugins: [require('remark-slug')],
       rehypePlugins: [],
     },
     scope: data,

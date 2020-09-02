@@ -6,7 +6,6 @@ import { postFilePaths, POSTS_PATH } from '@utils/mdxUtils'
 import SEO from '@components/SEO'
 import DefaultLayout from '@components/default-layout'
 import FullWidth from '@components/full-width'
-import Link from 'next/link'
 import { VStack, Box, Heading, Text } from '@chakra-ui/core'
 import BlogPost from '@components/blog-post'
 

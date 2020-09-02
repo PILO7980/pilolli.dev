@@ -4,6 +4,7 @@ const FullWidth = (props) => {
   const { children, ...rest } = props
   return (
     <Flex
+      gridColumn="start / end"
       w="100vw"
       position="relative"
       left="50%"

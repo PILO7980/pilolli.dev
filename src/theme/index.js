@@ -1,10 +1,8 @@
-import defaultTheme from '@chakra-ui/theme'
-import mdx from './mdx'
+import { extendTheme } from '@chakra-ui/core'
+import TextStyles from './styles/textStyles'
 
-const theme = {
-  ...defaultTheme,
+const theme = extendTheme({
   fonts: {
-    ...defaultTheme.fonts,
     heading: 'Inter, sans-serif',
     body: 'Inter, sans-serif',
     mono: '"Source Code Pro", monospace',
@@ -16,7 +14,7 @@ const theme = {
     bold: 700,
     extrabold: 800,
   },
-  ...mdx,
-}
+  ...TextStyles,
+})
 
 export default theme

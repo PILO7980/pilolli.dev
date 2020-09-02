@@ -5,7 +5,22 @@ import { Button, useClipboard } from '@chakra-ui/core'
 const CopyButton = ({ value }) => {
   const { onCopy, hasCopied } = useClipboard(value)
   return (
-    <Button aria-label="Copia" role="button" onClick={onCopy}>
+    <Button
+      display="flex"
+      alignItems="center"
+      size="xs"
+      position="absolute"
+      top={2}
+      right={2}
+      bg="green.300"
+      color="green.900"
+      _hover={{
+        bg: 'green.400',
+      }}
+      aria-label="Copia"
+      role="button"
+      onClick={onCopy}
+    >
       {hasCopied ? 'Copiato' : 'Copia'}
     </Button>
   )
@@ -29,6 +44,7 @@ export default function CodeBlock({ children, className }) {
             marginTop: 20,
             marginBottom: 20,
             padding: 16,
+            position: 'relative',
           }}
         >
           {tokens.map((line, i) => (
@@ -44,3 +60,6 @@ export default function CodeBlock({ children, className }) {
     </Highlight>
   )
 }
+
+// TODO: Style scrollbar
+// TODO: Add line number and line highlight

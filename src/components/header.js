@@ -21,7 +21,7 @@ const HeaderContent = () => {
   const SwitchIcon = useColorModeValue(HiMoon, HiSun)
 
   return (
-    <Container maxW="xl" py={12}>
+    <Container maxW="lg" py={12}>
       <Flex justifyContent="space-between">
         <Box>
           <NextLink href="/" passHref>
