@@ -9,11 +9,11 @@ import {
   HStack,
   Text,
   VisuallyHidden,
-  Container,
 } from '@chakra-ui/core'
 import { HiSun, HiMoon } from 'react-icons/hi'
 import Logo from '@components/logo'
 import NextLink from 'next/link'
+import Wrapper from '@components/wrapper'
 
 const HeaderContent = () => {
   const { toggleColorMode: toggleMode } = useColorMode()
@@ -21,7 +21,7 @@ const HeaderContent = () => {
   const SwitchIcon = useColorModeValue(HiMoon, HiSun)
 
   return (
-    <Container maxW="lg" py={12}>
+    <Wrapper py={12}>
       <Flex justifyContent="space-between">
         <Box>
           <NextLink href="/" passHref>
@@ -51,7 +51,7 @@ const HeaderContent = () => {
           />
         </HStack>
       </Flex>
-    </Container>
+    </Wrapper>
   )
 }
 

@@ -1,6 +1,7 @@
 import { Flex } from '@chakra-ui/core'
+import Wrapper from './wrapper'
 
-const FullWidth = (props) => {
+const Bleed = (props) => {
   const { children, ...rest } = props
   return (
     <Flex
@@ -13,9 +14,9 @@ const FullWidth = (props) => {
       marginRight="-50vw"
       {...rest}
     >
-      {children}
+      <Wrapper>{children}</Wrapper>
     </Flex>
   )
 }
 
-export default FullWidth
+export default Bleed

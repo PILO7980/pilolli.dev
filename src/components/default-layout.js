@@ -1,13 +1,14 @@
 import SEO from '@components/SEO'
 import Header from '@components/header'
-import { Container, Grid } from '@chakra-ui/core'
+import { Grid } from '@chakra-ui/core'
+import Wrapper from '@components/wrapper'
 
 const DefaultLayout = ({ props, children }) => {
   return (
     <>
       <SEO {...props}></SEO>
       <Header />
-      <Container maxW="lg" px={[8]}>
+      <Wrapper>
         <Grid
           templateColumns={
             ('minmax(0, 1fr)',
@@ -19,7 +20,7 @@ const DefaultLayout = ({ props, children }) => {
         >
           {children}
         </Grid>
-      </Container>
+      </Wrapper>
     </>
   )
 }

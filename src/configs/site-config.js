@@ -9,13 +9,13 @@ const siteConfig = {
   },
   seo: {
     title: 'Antonio Pilolli',
-    titleTemplate: '%s - Antonio Pilolli',
+    titleTemplate: '%s - pilolli.dev',
     description:
       'Il sito di Antonio Pilolli, front-end developer and web designer.',
     siteUrl: 'https://pilolli.dev',
     twitter: {
       handle: '@pilo7980',
-      site: '@pilo7980',
+      site: 'pilolli.dev',
       cardType: 'summary_large_image',
     },
     openGraph: {
@@ -25,7 +25,7 @@ const siteConfig = {
       title: 'Antonio Pilolli',
       description:
         'Il sito di Antonio Pilolli, front-end developer and web designer.',
-      site_name: 'Antonio Pilolli: front-end developer and web designer.',
+      site_name: 'pilolli.dev',
     },
   },
 }
