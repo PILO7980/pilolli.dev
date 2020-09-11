@@ -1,5 +1,5 @@
 import NextLink from 'next/link'
-import { Text, Heading, Box, Wrap, Tag, Link } from '@chakra-ui/core'
+import { Text, Heading, Box, Wrap, Badge, Link } from '@chakra-ui/core'
 
 const BlogPost = (post) => {
   const { filePath, data } = post
@@ -11,16 +11,16 @@ const BlogPost = (post) => {
         as={`/blog/${filePath.replace(/\.mdx?$/, '')}`}
         href={`/blog/[slug]`}
       >
-        <Link>
-          <Heading>{title}</Heading>
-        </Link>
+        <Heading>
+          <Link>{title}</Link>
+        </Heading>
       </NextLink>
       <Text fontSize="lg">{description}</Text>
       <Wrap>
         {tags.map((tag) => (
-          <Tag key={tag} size="sm" variant="solid">
+          <Badge key={tag} size="sm" variant="subtle">
             {tag}
-          </Tag>
+          </Badge>
         ))}
       </Wrap>
     </Box>

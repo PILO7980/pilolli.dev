@@ -81,8 +81,6 @@ export const Anchor = (props) => {
   )
 }
 
-const Pre = (props) => <chakra.div my={3} {...props} />
-
 const components = {
   p: (props) => <P textStyle={`p`} {...props} />,
   a: (props) => <Anchor {...props} />,
@@ -90,7 +88,7 @@ const components = {
   h2: (props) => <LinkedHeading textStyle={`h2`} {...props} />,
   h3: (props) => <LinkedHeading as="h3" textStyle={`h3`} {...props} />,
   h4: (props) => <LinkedHeading as="h4" textStyle={`h4`} {...props} />,
-  pre: (props) => <Pre {...props} />,
+  pre: (props) => <chakra.div {...props} />,
   code: CodeBlock,
   inlineCode: (props) => (
     <Code colorScheme="green" fontSize="0.84em" {...props} />

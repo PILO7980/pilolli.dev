@@ -5,7 +5,7 @@ const Bleed = (props) => {
   const { children, ...rest } = props
   return (
     <Flex
-      gridColumn="start / end"
+      gridColumn={['1', null, null, 'start / end']}
       w="100vw"
       position="relative"
       left="50%"

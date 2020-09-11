@@ -53,6 +53,7 @@ const TextSytles = {
     ul: {
       listStyle: 'none',
       my: '3',
+      pl: '8',
       '& > li': {
         position: 'relative',
         pl: '8',
@@ -74,18 +75,15 @@ const TextSytles = {
       listStyle: 'none',
       counterReset: 'list-counter',
       my: '3',
+      pl: '8',
       '& > li': {
-        position: 'relative',
         counterIncrement: 'list-counter',
-        pl: '8',
       },
       '& > li::before': {
-        position: 'absolute',
         content: `counters(list-counter, ".") "."`,
         fontWeight: 'semibold',
-        left: '0',
-        top: '0',
         color: 'green.500',
+        pr: '3',
       },
     },
     li: {

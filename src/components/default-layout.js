@@ -10,13 +10,14 @@ const DefaultLayout = ({ props, children }) => {
       <Header />
       <Wrapper>
         <Grid
-          templateColumns={
-            ('minmax(0, 1fr)',
+          templateColumns={[
+            'minmax(0, 1fr)',
             null,
             null,
-            '[start] minmax(0, 1fr) [middle] 200px [end]')
-          }
-          gap={3}
+            '[start] minmax(0, 1fr) [middle] 300px [end]',
+            '[start] minmax(0, 1fr) [middle] 450px [end]',
+          ]}
+          gap={8}
         >
           {children}
         </Grid>

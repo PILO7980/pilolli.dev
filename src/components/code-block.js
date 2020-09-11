@@ -61,5 +61,4 @@ export default function CodeBlock({ children, className }) {
   )
 }
 
-// TODO: Style scrollbar
 // TODO: Add line number and line highlight

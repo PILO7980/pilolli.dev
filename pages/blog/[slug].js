@@ -31,10 +31,15 @@ const PostPage = ({ source, frontMatter }) => {
   return (
     <DefaultLayout>
       <SEO title={frontMatter.title} description={frontMatter.description} />
-      <Box gridColumn={['start / end', null, null, 'start / middle']}>
+      <Box gridColumn={['1', null, null, 'start / middle']}>
         <Title textStyle={`h1`}>{frontMatter.title}</Title>
         <Description>{frontMatter.description}</Description>
         {content}
+      </Box>
+      <Box gridColumn={['1', null, null, 'middle / end']}>
+        {
+          // Sidebar
+        }
       </Box>
     </DefaultLayout>
   )
