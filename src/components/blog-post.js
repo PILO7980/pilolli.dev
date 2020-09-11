@@ -1,16 +1,12 @@
 import NextLink from 'next/link'
 import { Text, Heading, Box, Wrap, Badge, Link } from '@chakra-ui/core'
 
-const BlogPost = (post) => {
-  const { filePath, data } = post
-  const { title, description, tags } = data
+const BlogPost = ({ blog }) => {
+  const { slug, title, description, tags } = blog
 
   return (
     <Box>
-      <NextLink
-        as={`/blog/${filePath.replace(/\.mdx?$/, '')}`}
-        href={`/blog/[slug]`}
-      >
+      <NextLink as={`/blog/${slug}`} href={`/blog/[slug]`}>
         <Heading>
           <Link>{title}</Link>
         </Heading>

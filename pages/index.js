@@ -1,28 +1,7 @@
-import fs from 'fs'
-import matter from 'gray-matter'
-import path from 'path'
-import { postFilePaths, POSTS_PATH } from '@utils/mdxUtils'
-
-import SEO from '@components/SEO'
+import SEO from '@components/seo'
 import DefaultLayout from '@components/default-layout'
-import { VStack, useColorModeValue, Box } from '@chakra-ui/core'
-import BlogPost from '@components/blog-post'
+import { useColorModeValue } from '@chakra-ui/core'
 import Bleed from '@components/bleed'
-
-export function getStaticProps() {
-  const posts = postFilePaths.map((filePath) => {
-    const source = fs.readFileSync(path.join(POSTS_PATH, filePath))
-    const { content, data } = matter(source)
-
-    return {
-      content,
-      data,
-      filePath,
-    }
-  })
-
-  return { props: { posts } }
-}
 
 export default function Index({ posts }) {
   const bleedBg = useColorModeValue('green.600', 'green.300')
@@ -37,21 +16,6 @@ export default function Index({ posts }) {
       <Bleed py={8} fontSize="3xl" bg={bleedBg} color={bleedText} mb={8}>
         Prova Componente full width
       </Bleed>
-      <Box gridColumn={['1', null, null, 'start / middle']}>
-        <VStack align="stretch" spacing={8}>
-          {posts.map((post) => (
-            <BlogPost
-              key={`${post.filePath.replace(/\.mdx?$/, '')}`}
-              {...post}
-            />
-          ))}
-        </VStack>
-      </Box>
-      <Box gridColumn={['1', null, null, 'middle / end']}>
-        {
-          // Sidebar
-        }
-      </Box>
     </DefaultLayout>
   )
 }

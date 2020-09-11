@@ -1,4 +1,4 @@
-import SEO from '@components/SEO'
+import SEO from '@components/seo'
 import Header from '@components/header'
 import { Grid } from '@chakra-ui/core'
 import Wrapper from '@components/wrapper'

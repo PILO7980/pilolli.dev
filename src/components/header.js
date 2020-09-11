@@ -35,9 +35,9 @@ const HeaderContent = () => {
           </NextLink>
         </Box>
         <HStack spacing={1}>
-          <NextLink href="/chi-sono" passHref>
+          <NextLink href="/blog" passHref>
             <Button as="a" variant="ghost">
-              Chi sono
+              Giardino
             </Button>
           </NextLink>
           <IconButton

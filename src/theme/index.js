@@ -1,5 +1,6 @@
 import { extendTheme } from '@chakra-ui/core'
 import TextStyles from './styles/textStyles'
+import components from './components'
 
 const theme = extendTheme({
   fonts: {
@@ -13,6 +14,9 @@ const theme = extendTheme({
     semibold: 600,
     bold: 700,
     extrabold: 800,
+  },
+  components: {
+    ...components,
   },
   ...TextStyles,
 })
